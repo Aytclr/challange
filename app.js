@@ -105,7 +105,7 @@
 
 //? 8.soru
 // Bir nesne dizisi alan ve bu dizinin derin bir kopyasını döndüren bir fonksiyon yazın
-
+//! 1.yöntem
 // function diziKopyala(dizi){
 //     return dizi.map(öğe => JSON.parse(JSON.stringify(öğe)));
 //     }
@@ -116,14 +116,33 @@
 
 
 
+//! 2.yöntem
+// function diziKopyala(dizi) {
+//     return dizi.map(öğe => ({ ...öğe }));
+// }
 
-    function diziKopyala(dizi) {
-        return dizi.map(öğe => ({ ...öğe }));
-    }
+// const orijinal = [{a: 1}, {b: 2}];
+// const kopya = diziKopyala(orijinal);
+// kopya[0].a = 99;
+
+// console.log(orijinal[0].a); // Çıktı: 1
     
-    const orijinal = [{a: 1}, {b: 2}];
-    const kopya = diziKopyala(orijinal);
-    kopya[0].a = 99;
-    
-    console.log(orijinal[0].a); // Çıktı: 1
-    
+//? 9.soru
+// Birname,age ve ek özelliklere sahip bir nesne alan ve sadecenameveage özelliklerini döndüren bir fonksiyon yazın.
+
+
+
+function sadeceNameVeAge(nesne) {
+    const { name, age } = nesne; // Destructuring kullanarak name ve age özelliklerini al
+    return { name, age }; // Yeni bir nesne döndür
+}
+
+// Örnek kullanım
+const kişi = {
+    name: 'Ali',
+    age: 30,
+    gender: 'erkek',
+    occupation: 'mühendis'
+};
+
+console.log(sadeceNameVeAge(kişi)); // Çıktı: { name: 'Ali', age: 30 }
